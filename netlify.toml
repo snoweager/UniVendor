@@ -1,0 +1,17 @@
+[build]
+  base = "/"
+  command = "./netlify-build.sh"
+  publish = "dist/public"
+
+[build.environment]
+  NODE_VERSION = "18"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[dev]
+  command = "npm run client:dev"
+  port = 5174
+  publish = "dist/public"
